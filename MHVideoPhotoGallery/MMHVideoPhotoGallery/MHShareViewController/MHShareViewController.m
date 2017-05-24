@@ -877,7 +877,7 @@
                 [self addDataToDownloadArray:item.image];
             }else{
                 
-                [SDWebImageManager.sharedManager downloadImageWithURL:[NSURL URLWithString:item.URLString] options:SDWebImageContinueInBackground progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                [SDWebImageDownloader.sharedDownloader downloadImageWithURL:[NSURL URLWithString:item.URLString] options:SDWebImageDownloaderLowPriority progress:nil completed:^(UIImage *  image, NSData *  data, NSError *  error, BOOL finished) {
                     
                     MHImageURL *imageURLMH = [MHImageURL.alloc initWithURL:item.URLString
                                                                      image:image];

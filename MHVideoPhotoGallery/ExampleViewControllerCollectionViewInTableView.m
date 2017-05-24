@@ -60,7 +60,7 @@
     MHGalleryItem *tailored2 = [MHGalleryItem.alloc initWithURL:@"http://www.tailored-apps.com/wp-content/uploads/2014/01/hannes.jpg"
                                                    galleryType:MHGalleryTypeImage];
     
-    MHGalleryItem *tailored3 = [MHGalleryItem.alloc initWithURL:@"https://dl.dropboxusercontent.com/u/17911939/momu%26meParty.mp4"
+    MHGalleryItem *tailored3 = [MHGalleryItem.alloc initWithURL:@"https://s3-ap-southeast-1.amazonaws.com/vro-chat/trim.1069EFD5-25D3-429C-A5F1-4215DD7C2A7E.MOV"
                                                     galleryType:MHGalleryTypeVideo];
     
     NSShadow *shadow = [[NSShadow alloc] init];
@@ -93,7 +93,7 @@
     tailored.attributedTitle = title;
     tailored2.attributedString = string2;
 
-    self.galleryDataSource = @[@[tailored,tailored2]];
+    self.galleryDataSource = @[@[tailored,tailored2,tailored3]];
     self.tableView.backgroundColor = [UIColor colorWithRed:0.83 green:0.84 blue:0.86 alpha:1];
     [self.tableView reloadData];
     
@@ -207,7 +207,6 @@
                     [self setNeedsStatusBarAppearanceUpdate];
                     
                     MPMoviePlayerController *player = interactiveTransition.moviePlayer;
-                    
                     player.controlStyle = MPMovieControlStyleEmbedded;
                     player.view.frame = cell.bounds;
                     player.scalingMode = MPMovieScalingModeAspectFill;
